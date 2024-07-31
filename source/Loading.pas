@@ -144,7 +144,7 @@ begin
   ArcLoad.Width                            := 25;
   ArcLoad.Height                           := 25;
   ArcLoad.EndAngle                         := 280;
-  ArcLoad.Stroke.Color                     := TAlphaColorRec.White;;
+  ArcLoad.Stroke.Color                     := TAlphaColorRec.Green; //.White;
   ArcLoad.Stroke.Thickness                 := 2;
   ArcLoad.Position.X                       := Trunc((Layout.Width - ArcLoad.Width) / 2);
   ArcLoad.Position.Y                       := 0;
@@ -171,7 +171,7 @@ begin
   ArcLoadMaior.Width                       := 60;
   ArcLoadMaior.Height                      := 60;
   ArcLoadMaior.EndAngle                    := 280;
-  ArcLoadMaior.Stroke.Color                := TAlphaColorRec.White;;
+  ArcLoadMaior.Stroke.Color                := TAlphaColorRec.Blue; //.White;
   ArcLoadMaior.Stroke.Thickness            := 4;
   ArcLoadMaior.Position.X                  := Trunc((Layout.Width - ArcLoad.Width) / 2);
   ArcLoadMaior.Position.Y                  := 0;
@@ -198,7 +198,7 @@ begin
   MessageLoad.Font.Size                    := 13;
   MessageLoad.Height                       := 70;
   MessageLoad.Width                        := Application.MainForm.Width - 100;
-  MessageLoad.FontColor                    := TAlphaColorRec.White;;
+  MessageLoad.FontColor                    := TAlphaColorRec.White;
   MessageLoad.TextSettings.HorzAlign       := TTextAlign.Center;
   MessageLoad.TextSettings.VertAlign       := TTextAlign.Leading;
   MessageLoad.StyledSettings               := [TStyledSetting.Family, TStyledSetting.Style];
@@ -209,8 +209,8 @@ begin
   MessageLoad.SetFocus;
 
   //Show Controls
-  Background.AnimateFloat('Opacity', 0.4);
-  Layout.AnimateFloat('Opacity', 1);
+  TAnimator.AnimateFloat(Background, 'Opacity', 0.4);
+  TAnimator.AnimateFloat(Layout, 'Opacity', 1);
   Layout.BringToFront;
 
   //Hide KeyBoard
